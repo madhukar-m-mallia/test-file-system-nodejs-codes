@@ -1,0 +1,3 @@
+A method that came to my mind is convert the images to a hash name and create a has table of these image names. Divide the whole table into smaller hash objects. Map each object to a specific CDN link. One method the CDN servers use to serve same content, is to use sub domains. (As mentioned in http://cloudinary.com/blog/reduce_site_load_time_with_multiple_cdn_sub_domains).
+
+Again, if a proxy server (like Nginx) is set up so that the subdomain hits our proxy server and gets routed to the CDN server, I think a load balancing can be done there keeping multiple set of different CDN URL for each image URL in our Nginx server. Since the same content is loaded by the CDN servers, the speed of image loading would be less.
